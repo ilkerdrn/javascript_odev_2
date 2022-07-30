@@ -1,0 +1,146 @@
+<!DOCTYPE html>
+<html lang="tr">
+  <head>
+    <meta charset="UTF-8" />
+    <meta http-equiv="X-UA-Compatible" content="IE=edge" />
+    <meta name="viewport" content="width=device-width, initial-scale=1.0" />
+    <link rel="stylesheet" href="css/style.css" />
+    <link
+      href="https://cdn.jsdelivr.net/npm/bootstrap@5.2.0/dist/css/bootstrap.min.css"
+      rel="stylesheet"
+      integrity="sha384-gH2yIJqKdNHPEq0n4Mqa/HGKIhSkIHeL5AyhkYV8i59U5AR6csBvApHHNl/vI1Bx"
+      crossorigin="anonymous"
+    />
+    <title>JavaScript To-Do List</title>
+  </head>
+  <body>
+    <div class="toast-container position-fixed top-0 end-0 p-3">
+      <div
+        id="liveToast"
+        class="toast"
+        role="alert"
+        aria-live="assertive"
+        aria-atomic="true"
+        data-delay="1000"
+      >
+        <div class="toast-header">
+          <img src="" class="rounded me-2" alt="emoji-smile" id="toast-img" />
+          <strong class="me-auto" id="toast-title"></strong>
+          <small>Şimdi</small>
+          <button
+            type="button"
+            class="btn-close"
+            data-bs-dismiss="toast"
+            aria-label="Close"
+          ></button>
+        </div>
+        <div class="toast-body"></div>
+      </div>
+    </div>
+
+    <div class="container">
+      <div class="header">
+        <img
+          src="https://cdn.sanity.io/images/9kdepi1d/production/65c832d202a503b15d99e628f4313782f3ef50db-300x62.png"
+          class="mb-1"
+          alt=""
+        />
+
+        <h2>
+          <img
+            src="img/journal-check.svg"
+            alt="journal-check"
+            style="width: 30px; margin-right: 10px"
+          />Yapılacaklar Listesi
+        </h2>
+        <form onsubmit="event.preventDefault(); newElement()">
+          <input
+            type="text"
+            name="task"
+            id="task"
+            placeholder="Bugün ne yapacaksın?"
+          />
+          <input type="submit" value="Ekle" id="liveToastBtn" class="button" />
+        </form>
+      </div>
+
+      <ul id="list">
+        <li onclick="changeCls(this)">
+          Sabah egzersizleri<button
+            type="button"
+            onclick="deleteItem(this)"
+            class="btn-close float-end"
+            aria-label="Close"
+          ></button>
+        </li>
+        <li onclick="changeCls(this)">
+          Güzel bir kahvaltı<button
+            type="button"
+            onclick="deleteItem(this)"
+            class="btn-close float-end"
+            aria-label="Close"
+          ></button>
+        </li>
+        <li onclick="changeCls(this)">
+          Su içmek<button
+            type="button"
+            onclick="deleteItem(this)"
+            class="btn-close float-end"
+            aria-label="Close"
+          ></button>
+        </li>
+        <li onclick="changeCls(this)">
+          Kitap okuma saati<button
+            type="button"
+            onclick="deleteItem(this)"
+            class="btn-close float-end"
+            aria-label="Close"
+          ></button>
+        </li>
+        <li onclick="changeCls(this)">
+          İngilizce Saati<button
+            type="button"
+            onclick="deleteItem(this)"
+            class="btn-close float-end"
+            aria-label="Close"
+          ></button>
+        </li>
+        <li onclick="changeCls(this)">
+          Dizi Vakti
+          <button
+            type="button"
+            onclick="deleteItem(this)"
+            class="btn-close float-end"
+            aria-label="Close"
+          ></button>
+        </li>
+      </ul>
+      <div>
+        <button
+          onclick="markAll()"
+          id="btnMarkAll"
+          class="btn btn-success float-start"
+        >
+          Günü Kurtardım</button
+        ><button
+          onclick="deleteTaskList()"
+          id="btnDelAll"
+          class="btn btn-danger float-end"
+        >
+          Tümünü Sil
+        </button>
+      </div>
+      <script
+        src="https://code.jquery.com/jquery-3.6.0.slim.min.js"
+        integrity="sha256-u7e5khyithlIdTpu22PHhENmPcRdFiHRjhAuHcs05RI="
+        crossorigin="anonymous"
+      ></script>
+      <script src="js/functions.js"></script>
+    </div>
+    <script
+      src="https://cdn.jsdelivr.net/npm/bootstrap@5.2.0/dist/js/bootstrap.bundle.min.js"
+      integrity="sha384-A3rJD856KowSb7dwlZdYEkO39Gagi7vIsF0jrRAoQmDKKtQBHUuLZ9AsSv4jD4Xa"
+      crossorigin="anonymous"
+    ></script>
+  </body>
+</html>
